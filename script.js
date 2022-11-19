@@ -41,10 +41,11 @@ window.addEventListener('DOMContentLoaded', async () => {
     
     $btnGuardarTarea.onclick = () => {
 
-		let task = $('#inputNuevaTarea').val();
+		let task = $('#inputNuevaTarea').val().trim();
         var state = false;
 
-		saveTask(task, state); //Guardamos en Firebase
+        if(task!="")
+		    saveTask(task, state); //Guardamos en Firebase
 		$inputNuevaTarea.value = "";                
 	};
 })
